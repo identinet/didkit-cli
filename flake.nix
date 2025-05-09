@@ -1,6 +1,7 @@
 {
   description = "didkit CLI";
   inputs.nixpkgs.url = "github:NixOS/nixpkgs/nixos-24.11";
+  inputs.self.submodules = true;
   outputs =
     { self, nixpkgs }:
     let
