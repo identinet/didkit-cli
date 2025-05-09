@@ -7,6 +7,7 @@ Only this works due to lack of support for the submodules
 ```bash
 git clone --recurse-submodules https://github.com/identinet/didkit-cli
 cd didkit-cli
+# for nix --version < 2.27
 # manually comment out this line in flake.nix:
 #   inputs.self.submodules = true;
 nix develop '.?submodules=1#'
