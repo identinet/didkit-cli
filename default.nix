@@ -1,5 +1,8 @@
-{ pkgs ? import <nixpkgs> { } }:
-let manifest = (pkgs.lib.importTOML ./didkit/cli/Cargo.toml).package;
+{
+  pkgs ? import <nixpkgs> { },
+}:
+let
+  manifest = (pkgs.lib.importTOML ./didkit/cli/Cargo.toml).package;
 in
 pkgs.rustPlatform.buildRustPackage rec {
   pname = manifest.name;
@@ -12,6 +15,6 @@ pkgs.rustPlatform.buildRustPackage rec {
     description = "Core library for Verifiable Credentials and Decentralized Identifiers.";
     homepage = "https://github.com/ideninet/didkit";
     license = with licenses; [ asl20 ];
-    maintainers = with maintainers; [ ];
+    maintainers = with maintainers; [ jceb ];
   };
 }
